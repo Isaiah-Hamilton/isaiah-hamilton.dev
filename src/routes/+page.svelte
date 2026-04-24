@@ -1,4 +1,9 @@
 <script lang="ts">
+    import bluesky from "$lib/assets/bluesky.svg";
+    import github from "$lib/assets/github.svg";
+    import linkedin from "$lib/assets/linkedin.svg";
+    import tangled from "$lib/assets/tangled.svg";
+
     const services = [
         {
             icon: "paint brush",
@@ -27,6 +32,31 @@
     ];
 
     const works = [
+        {
+            title: "Violet",
+            description: "Framer Template",
+            image: "https://framerusercontent.com/images/7VybckhbrXvFd1uHTiacrudPcXM.png?width=1000&height=750",
+        },
+        {
+            title: "Violet",
+            description: "Framer Template",
+            image: "https://framerusercontent.com/images/7VybckhbrXvFd1uHTiacrudPcXM.png?width=1000&height=750",
+        },
+        {
+            title: "Violet",
+            description: "Framer Template",
+            image: "https://framerusercontent.com/images/7VybckhbrXvFd1uHTiacrudPcXM.png?width=1000&height=750",
+        },
+        {
+            title: "Violet",
+            description: "Framer Template",
+            image: "https://framerusercontent.com/images/7VybckhbrXvFd1uHTiacrudPcXM.png?width=1000&height=750",
+        },
+        {
+            title: "Violet",
+            description: "Framer Template",
+            image: "https://framerusercontent.com/images/7VybckhbrXvFd1uHTiacrudPcXM.png?width=1000&height=750",
+        },
         {
             title: "Violet",
             description: "Framer Template",
@@ -236,25 +266,46 @@
         >
             <ul class="flex items-center justify-around">
                 <li>
+                    <a
+                        href="https://bsky.app/profile/isaiah-hamilton.dev"
+                        target="_blank"
+                        ><img
+                            src={bluesky}
+                            alt="bluesky"
+                            class="w-10 h-10"
+                        /></a
+                    >
+                </li>
+                <li>
                     <a href="https://github.com/isaiah-hamilton" target="_blank"
-                        >github</a
+                        ><img src={github} alt="github" class="w-10 h-10" /></a
                     >
                 </li>
                 <li>
                     <a
                         href="https://tangled.sh/isaiah-hamilton.dev"
-                        target="_blank">tangled</a
+                        target="_blank"
+                        ><img
+                            src={tangled}
+                            alt="tangled"
+                            class="w-10 h-10"
+                        /></a
                     >
                 </li>
                 <li>
                     <a
-                        href="https://bsky.app/profile/isaiah-hamilton.dev"
-                        target="_blank">bluesky</a
+                        href="https://linkedin.com/in/isaiah7hamilton"
+                        target="_blank"
+                        ><img
+                            src={linkedin}
+                            alt="linkedin"
+                            class="w-10 h-10"
+                        /></a
                     >
                 </li>
             </ul>
         </div>
-        <a href="" class="col-span-2">
+        <a href="##" class="col-span-2">
             <div
                 class="group bg-[#0E0E0E] hover:bg-black border-2 border-[#262626] rounded-2xl space-y-4 py-8 transition duration-300"
             >
