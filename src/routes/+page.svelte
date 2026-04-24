@@ -33,6 +33,19 @@
             image: "https://framerusercontent.com/images/7VybckhbrXvFd1uHTiacrudPcXM.png?width=1000&height=750",
         },
     ];
+
+    const faqs = [
+        {
+            question: "What type of projects do you work on?",
+            answer: "I mainly create clean, modern, high-converting portfolio websites for designers, photographers, creators, agencies, and personal brands. If your work deserves a polished online presence, I can build it.",
+        },
+    ];
+
+    let openFAQuestion = $state("");
+
+    function toggleFAQ(key: string) {
+        openFAQuestion = openFAQuestion === key ? "" : key;
+    }
 </script>
 
 <div
@@ -127,16 +140,135 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-200 mx-auto">
         {#each works as work}
             <div
-                class="space-y-2 bg-[#0e0e0e] border-2 border-[#262626] rounded-2xl px-2 py-2"
+                class="group space-y-2 bg-[#0e0e0e] border-2 border-[#262626] rounded-2xl px-2 py-2"
             >
-                <img src={work.image} alt={work.title} class="rounded-xl" />
-                <div class="space-y-2">
-                    <h3 class="text-base font-medium">{work.title}</h3>
-                    <p class="text-sm font-semibold text-[#86868b]">
-                        {work.description}
-                    </p>
+                <div class="overflow-hidden rounded-xl">
+                    <img
+                        src={work.image}
+                        alt={work.title}
+                        class="rounded-xl group-hover:scale-105 transition duration-300"
+                    />
+                </div>
+                <div class="flex items-end justify-between">
+                    <div class="space-y-2">
+                        <h3 class="text-base font-medium">{work.title}</h3>
+                        <p class="text-sm font-semibold text-[#86868b]">
+                            {work.description}
+                        </p>
+                    </div>
+                    <i
+                        class="ph-bold ph-arrow-up-right text-xl group-hover:rotate-45 transition duration-300 pr-1"
+                    ></i>
                 </div>
             </div>
         {/each}
+    </div>
+</div>
+
+<div class="mt-40 space-y-14">
+    <div class="text-center">
+        <p class="text-sm font-semibold text-[#86868b]">FAQ</p>
+        <h2 class="text-5xl font-semibold leading-tight mt-6 max-w-140 mx-auto">
+            Some of my frequently asked questions
+        </h2>
+        <p class="text-[#86868b] mt-4 max-w-115 mx-auto">
+            A quick collection of helpful answers so you can get clarity fast.
+            If there’s anything else you’re wondering about, just reach out!
+        </p>
+    </div>
+    <div class="max-w-200 mx-auto">
+        {#each faqs as faq}
+            <button
+                class="space-y-4 bg-[#0e0e0e] px-8 py-6 w-full {openFAQuestion ===
+                faq.question
+                    ? 'rounded-[40px]'
+                    : 'rounded-full'}"
+                onclick={() => toggleFAQ(faq.question)}
+            >
+                <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-medium">{faq.question}</h3>
+                    <div class="px-3 py-1 bg-[#262626] rounded-full">
+                        {#if openFAQuestion === faq.question}
+                            -
+                        {:else}
+                            +
+                        {/if}
+                    </div>
+                </div>
+                {#if openFAQuestion === faq.question}
+                    <p
+                        class="text-left text-[15px] font-semibold text-[#86868b] max-w-xl"
+                    >
+                        {faq.answer}
+                    </p>
+                {/if}
+            </button>
+        {/each}
+    </div>
+</div>
+
+<div class="mt-40 space-y-14">
+    <div class="text-center">
+        <p class="text-sm font-semibold text-[#86868b]">Get Started</p>
+        <h2 class="text-5xl font-semibold leading-tight mt-6 max-w-140 mx-auto">
+            Shoot me a DM, let's discuss your next project
+        </h2>
+        <p class="text-[#86868b] mt-4 max-w-115 mx-auto">
+            Whether you want to send an email, drop a quick message, or hop on a
+            call — I’m here and excited to hear what you’re working on.
+        </p>
+    </div>
+    <div class="grid grid-cols-2 gap-8 max-w-200 mx-auto">
+        <!-- TODO: make contact form -->
+        <a href="mailto:hello@isaiah-hamilton.dev">
+            <div
+                class="col-span-1 bg-[#0E0E0E] hover:bg-black border-2 border-[#262626] rounded-2xl text-center space-y-4 py-8 transition duration-300"
+            >
+                <p class="text-sm text-[#86868b]">Email Me</p>
+                <p class="text-2xl">
+                    hello<span class="text-green-500">@</span
+                    >isaiah-hamilton<span class="text-red-500">.</span>dev
+                </p>
+            </div>
+        </a>
+        <div
+            class="col-span-1 bg-[#0E0E0E] border-2 border-[#262626] rounded-2xl text-center py-8 content-center"
+        >
+            <ul class="flex items-center justify-around">
+                <li>
+                    <a href="https://github.com/isaiah-hamilton" target="_blank"
+                        >github</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://tangled.sh/isaiah-hamilton.dev"
+                        target="_blank">tangled</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://bsky.app/profile/isaiah-hamilton.dev"
+                        target="_blank">bluesky</a
+                    >
+                </li>
+            </ul>
+        </div>
+        <a href="" class="col-span-2">
+            <div
+                class="group bg-[#0E0E0E] hover:bg-black border-2 border-[#262626] rounded-2xl space-y-4 py-8 transition duration-300"
+            >
+                <div class="flex items-center w-fit mx-auto gap-4">
+                    <p class="text-2xl">Schedule a Call</p>
+                    <div
+                        class="flex w-12 h-12 items-center justify-center bg-blue-500 rounded-full"
+                    >
+                        <i
+                            class="ph-bold ph-arrow-up-right text-xl group-hover:rotate-45 transition duration-300"
+                        ></i>
+                    </div>
+                </div>
+            </div>
+        </a>
     </div>
 </div>

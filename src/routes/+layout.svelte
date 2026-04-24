@@ -3,9 +3,18 @@
     import favicon from "$lib/assets/favicon.svg";
 
     let { children } = $props();
+
+    const year = new Date().getFullYear();
 </script>
 
-<svelte:head><link rel="icon" href={favicon} /></svelte:head>
+<svelte:head>
+    <link rel="icon" href={favicon} />
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://esm.sh/@phosphor-icons/web@2.1.2/src/bold/style.css"
+    />
+</svelte:head>
 
 <div class="relative">
     <nav
@@ -34,4 +43,11 @@
     <main class="container mx-auto">
         {@render children()}
     </main>
+    <footer class="container mx-auto border border-[#0E0E0E] mt-10">
+        <div class="py-4">
+            <p class="text-sm text-[#86868b]">
+                {year} © Isaiah Hamilton
+            </p>
+        </div>
+    </footer>
 </div>
