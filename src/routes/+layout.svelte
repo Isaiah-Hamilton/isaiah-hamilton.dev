@@ -1,15 +1,24 @@
 <script lang="ts">
     import "./layout.css";
-    import { Theme } from "$lib";
     import favicon from "$lib/assets/favicon.svg";
 
     let { children } = $props();
 
-    let theme = $state<Theme>(Theme.Dark);
+    let isDark = $state(false);
+
+    $effect(() => {
+        if (typeof window === "undefined") return;
+
+        const saved = localStorage.getItem("theme");
+        isDark = saved === "dark";
+
+        document.documentElement.classList.toggle("dark", isDark);
+    });
 
     function toggleTheme() {
-        theme === "dark" ? (theme = Theme.Light) : (theme = Theme.Dark);
-        console.log(theme);
+        isDark = !isDark;
+        document.documentElement.classList.toggle("dark", isDark);
+        localStorage.setItem("theme", isDark ? "dark" : "light");
     }
 
     const year = new Date().getFullYear();
@@ -50,7 +59,7 @@
                 class="transition-colors duration-500 ease-out hover:text-[#ffffff]"
             >
                 <button onclick={() => toggleTheme()} class="">
-                    {#if theme === "dark"}
+                    {#if isDark === true}
                         <i class="ph-bold ph-sun"></i>
                     {:else}
                         <i class="ph-bold ph-moon"></i>
