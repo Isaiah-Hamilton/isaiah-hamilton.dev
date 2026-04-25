@@ -35,28 +35,28 @@
 
 <div class="relative">
     <nav
-        class="fixed top-4 left-1/2 transform -translate-x-1/2 z-20 w-fit mx-auto border border-[#262626] rounded-full px-4 py-2 backdrop-blur-md bg-[#121212b3]"
+        class="fixed top-4 left-1/2 transform -translate-x-1/2 z-20 w-fit mx-auto border border-neutral-300 dark:border-[#262626] rounded-full px-4 py-2 backdrop-blur-md bg-neutral-100 dark:bg-[#121212b3]"
     >
         <ul
-            class="flex items-center justify-center gap-4 text-[#86868b] text-sm"
+            class="flex items-center justify-center gap-4 text-neutral-500 dark:text-[#86868b] text-sm"
         >
             <li
-                class="transition-colors duration-500 ease-out hover:text-[#ffffff]"
+                class="transition-colors duration-500 ease-out hover:text-neutral-900 dark:hover:text-white"
             >
                 <a href="/">Services</a>
             </li>
             <li
-                class="transition-colors duration-500 ease-out hover:text-[#ffffff]"
+                class="transition-colors duration-500 ease-out hover:text-neutral-900 dark:hover:text-white"
             >
                 <a href="/about">Works</a>
             </li>
             <li
-                class="transition-colors duration-500 ease-out hover:text-[#ffffff]"
+                class="transition-colors duration-500 ease-out hover:text-neutral-900 dark:hover:text-white"
             >
                 <a href="/contact">Contact me</a>
             </li>
             <li
-                class="transition-colors duration-500 ease-out hover:text-[#ffffff]"
+                class="transition-colors duration-500 ease-out hover:text-neutral-900 dark:hover:text-white"
             >
                 <button onclick={() => toggleTheme()} class="">
                     {#if isDark === true}
