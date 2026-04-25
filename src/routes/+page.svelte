@@ -257,7 +257,7 @@
                 <p class="text-sm text-[#86868b]">Email Me</p>
                 <p class="text-2xl">
                     hello<span class="text-green-500">@</span
-                    >isaiah-hamilton<span class="text-red-500">.</span>dev
+                    >isaiah-hamilton<span class="text-pink-500">.</span>dev
                 </p>
             </div>
         </a>

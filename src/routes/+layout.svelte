@@ -1,8 +1,16 @@
 <script lang="ts">
     import "./layout.css";
+    import { Theme } from "$lib";
     import favicon from "$lib/assets/favicon.svg";
 
     let { children } = $props();
+
+    let theme = $state<Theme>(Theme.Dark);
+
+    function toggleTheme() {
+        theme === "dark" ? (theme = Theme.Light) : (theme = Theme.Dark);
+        console.log(theme);
+    }
 
     const year = new Date().getFullYear();
 </script>
@@ -37,6 +45,17 @@
                 class="transition-colors duration-500 ease-out hover:text-[#ffffff]"
             >
                 <a href="/contact">Contact me</a>
+            </li>
+            <li
+                class="transition-colors duration-500 ease-out hover:text-[#ffffff]"
+            >
+                <button onclick={() => toggleTheme()} class="">
+                    {#if theme === "dark"}
+                        <i class="ph-bold ph-sun"></i>
+                    {:else}
+                        <i class="ph-bold ph-moon"></i>
+                    {/if}
+                </button>
             </li>
         </ul>
     </nav>
