@@ -75,15 +75,19 @@ export const SkyPresets: SkyGradient[] = [
         position: 0,
       },
       {
-        rgb: [76, 142, 245],
-        position: 35,
+        rgb: [82, 150, 246],
+        position: 30,
       },
       {
-        rgb: [118, 175, 255],
-        position: 68,
+        rgb: [145, 194, 255],
+        position: 62,
       },
       {
-        rgb: [169, 204, 255],
+        rgb: [214, 232, 255],
+        position: 84,
+      },
+      {
+        rgb: [255, 255, 255],
         position: 100,
       },
     ],
