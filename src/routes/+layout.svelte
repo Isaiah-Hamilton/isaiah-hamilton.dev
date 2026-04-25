@@ -59,10 +59,10 @@
             </li>
         </ul>
     </nav>
-    <main class="container mx-auto">
+    <main class="overflow-x-hidden">
         {@render children()}
     </main>
-    <footer class="container mx-auto border border-[#0E0E0E] mt-10">
+    <footer class="container mx-auto border-t border-[#0E0E0E] mt-10 px-4">
         <div class="py-4">
             <p class="text-sm text-[#86868b]">
                 {year} © Isaiah Hamilton
