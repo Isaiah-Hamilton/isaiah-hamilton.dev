@@ -296,24 +296,24 @@
             class="col-span-1 bg-neutral-100 dark:bg-neutral-950 border-2 border-neutral-200 dark:border-neutral-900 rounded-2xl text-center py-8 content-center"
         >
             <ul class="flex items-center justify-around">
-                <li>
+                <li class="transition duration-300 hover:scale-110">
                     <a
                         href="https://bsky.app/profile/isaiah-hamilton.dev"
                         target="_blank"><Bluesky /></a
                     >
                 </li>
-                <li>
+                <li class="transition duration-300 hover:scale-110">
                     <a href="https://github.com/isaiah-hamilton" target="_blank"
                         ><Github /></a
                     >
                 </li>
-                <li>
+                <li class="transition duration-300 hover:scale-110">
                     <a
                         href="https://tangled.sh/isaiah-hamilton.dev"
                         target="_blank"><Tangled /></a
                     >
                 </li>
-                <li>
+                <li class="transition duration-300 hover:scale-110">
                     <a
                         href="https://linkedin.com/in/isaiah7hamilton"
                         target="_blank"><Linkedin /></a
