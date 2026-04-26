@@ -35,28 +35,28 @@
 
 <div class="relative">
     <nav
-        class="fixed top-4 left-1/2 transform -translate-x-1/2 z-20 w-fit mx-auto border border-neutral-300 dark:border-[#262626] rounded-full px-4 py-2 backdrop-blur-md bg-neutral-100 dark:bg-[#121212b3]"
+        class="fixed top-4 left-1/2 transform -translate-x-1/2 z-20 w-fit mx-auto border border-neutral-300 dark:border-neutral-900 rounded-full px-4 py-2 backdrop-blur-md bg-neutral-100 dark:bg-neutral-950/80"
     >
         <ul
-            class="flex items-center justify-center gap-4 text-neutral-500 dark:text-[#86868b] text-sm"
+            class="flex items-center justify-center gap-4 text-neutral-500 text-sm"
         >
             <li
-                class="transition-colors duration-500 ease-out hover:text-neutral-900 dark:hover:text-white"
+                class="transition-colors duration-500 ease-out hover:text-neutral-900 dark:hover:text-neutral-100"
             >
                 <a href="/">Services</a>
             </li>
             <li
-                class="transition-colors duration-500 ease-out hover:text-neutral-900 dark:hover:text-white"
+                class="transition-colors duration-500 ease-out hover:text-neutral-900 dark:hover:text-neutral-100"
             >
                 <a href="/about">Works</a>
             </li>
             <li
-                class="transition-colors duration-500 ease-out hover:text-neutral-900 dark:hover:text-white"
+                class="transition-colors duration-500 ease-out hover:text-neutral-900 dark:hover:text-neutral-100"
             >
                 <a href="/contact">Contact me</a>
             </li>
             <li
-                class="transition-colors duration-500 ease-out hover:text-neutral-900 dark:hover:text-white"
+                class="transition-colors duration-500 ease-out hover:text-neutral-900 dark:hover:text-neutral-100"
             >
                 <button onclick={() => toggleTheme()} class="">
                     {#if isDark === true}
@@ -72,10 +72,10 @@
         {@render children()}
     </main>
     <footer
-        class="container mx-auto border-t border-neutral-100 dark:border-[#0E0E0E] mt-10 px-4"
+        class="container mx-auto border-t border-neutral-100 dark:border-neutral-900 mt-10 px-4"
     >
         <div class="py-4">
-            <p class="text-sm text-[#86868b]">
+            <p class="text-sm text-neutral-500">
                 {year} © Isaiah Hamilton
             </p>
         </div>

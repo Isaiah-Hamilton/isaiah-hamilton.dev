@@ -101,12 +101,12 @@
     >
         <div class="w-fit mx-auto">
             <img
-                class="rounded-full w-24 h-24 mx-auto border-2 border-neutral-300 dark:border-[#262626]"
+                class="rounded-full w-24 h-24 mx-auto border-2 border-neutral-200 dark:border-neutral-900"
                 src="https://selfhosted.social/xrpc/com.atproto.sync.getBlob?did=did:plc:kal7cndv3fyeyo3qw3ejixmd&cid=bafkreifwlccr5hlzq6v4az7tlibhr4aqq3xckuifejmkgwxejjysnudpue"
                 alt="Isaiah Hamilton"
             />
             <div
-                class="-translate-y-4 flex items-center gap-2 px-2 py-1 w-fit mx-auto rounded-full bg-neutral-100 dark:bg-[#0E0E0E]"
+                class="-translate-y-4 flex items-center gap-2 px-2 py-1 w-fit mx-auto rounded-full bg-neutral-100 dark:bg-neutral-950"
             >
                 <div class="relative h-2 w-2">
                     <div
@@ -116,9 +116,7 @@
                         class="absolute bg-green-500 h-full w-full rounded-full"
                     ></div>
                 </div>
-                <p
-                    class="text-sm font-medium text-neutral-700 dark:text-neutral-900"
-                >
+                <p class="text-sm font-medium text-neutral-500">
                     Available for work
                 </p>
             </div>
@@ -130,7 +128,7 @@
                 I design and build modern experiences
             </h1>
             <p
-                class="text-base text-neutral-900/85 dark:text-[#86868b] max-w-sm mx-auto"
+                class="text-base text-neutral-900/85 dark:text-neutral-500 max-w-sm mx-auto"
             >
                 Hey, I'm Isaiah. I design and build modern digital experiences
                 for individuals and growing businesses.
@@ -139,10 +137,10 @@
         <div class="flex items-center gap-2 w-fit mx-auto mt-8">
             <a href="">
                 <div
-                    class="transition duration-300 flex items-center h-10 w-30 rounded-full bg-neutral-100 dark:bg-[#0E0E0E] shadow-[0px_0px_0px_0px_var(--color-neutral-300)] hover:shadow-[0px_0px_0px_3px_var(--color-neutral-300)]"
+                    class="transition duration-300 flex items-center h-10 w-30 rounded-full bg-neutral-100 dark:bg-neutral-950 shadow-[0px_0px_0px_0px_var(--color-neutral-200)] hover:shadow-[0px_0px_0px_3px_var(--color-neutral-200)] dark:shadow-[0px_0px_0px_0px_var(--color-neutral-900)] dark:hover:shadow-[0px_0px_0px_3px_var(--color-neutral-900)]"
                 >
                     <p
-                        class="text-sm text-neutral-700 dark:text-neutral-100 font-medium mx-auto"
+                        class="text-sm text-neutral-500 dark:text-neutral-100 font-medium mx-auto"
                     >
                         See my work
                     </p>
@@ -173,7 +171,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-200 mx-auto">
         {#each services as service}
             <div
-                class="space-y-6 bg-neutral-100 dark:bg-[#0e0e0e] border-2 border-neutral-300 dark:border-[#262626] rounded-2xl px-8 py-6"
+                class="space-y-6 bg-neutral-100 dark:bg-neutral-950 border-2 border-neutral-200 dark:border-neutral-900 rounded-2xl px-8 py-6"
             >
                 <div>{service.icon}</div>
                 <div class="space-y-2">
@@ -201,7 +199,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-200 mx-auto">
         {#each works as work}
             <div
-                class="group space-y-2 bg-neutral-100 dark:bg-[#0e0e0e] border-2 border-neutral-300 dark:border-[#262626] rounded-2xl px-2 py-2"
+                class="group space-y-2 bg-neutral-100 dark:bg-neutral-950 border-2 border-neutral-200 dark:border-neutral-900 rounded-2xl px-2 py-2"
             >
                 <div class="overflow-hidden rounded-xl">
                     <img
@@ -240,7 +238,7 @@
     <div class="max-w-200 mx-auto">
         {#each faqs as faq}
             <button
-                class="space-y-4 bg-neutral-100 dark:bg-[#0e0e0e] px-8 py-6 w-full {openFAQuestion ===
+                class="space-y-4 bg-neutral-100 dark:bg-neutral-950 px-8 py-6 w-full {openFAQuestion ===
                 faq.question
                     ? 'rounded-[40px]'
                     : 'rounded-full'}"
@@ -249,7 +247,7 @@
                 <div class="flex items-center justify-between">
                     <h3 class="text-lg font-medium">{faq.question}</h3>
                     <div
-                        class="px-2 py-1 bg-neutral-300 dark:bg-[#262626] rounded-full text-neutral-500 dark:text-neutral-100"
+                        class="px-2 py-1 bg-neutral-200 dark:bg-neutral-900 rounded-full text-neutral-500 dark:text-neutral-100"
                     >
                         {#if openFAQuestion === faq.question}
                             <i class="ph-bold ph-minus"></i>
@@ -285,7 +283,7 @@
         <!-- TODO: make contact form -->
         <a href="mailto:hello@isaiah-hamilton.dev">
             <div
-                class="col-span-1 bg-neutral-100 hover:bg-white dark:bg-[#0E0E0E] dark:hover:bg-black border-2 border-neutral-300 dark:border-[#262626] rounded-2xl text-center space-y-4 py-8 transition duration-300"
+                class="col-span-1 bg-neutral-100 hover:bg-white dark:bg-neutral-950 dark:hover:bg-black border-2 border-neutral-200 dark:border-neutral-900 rounded-2xl text-center space-y-4 py-8 transition duration-300"
             >
                 <p class="text-sm text-neutral-500">Email Me</p>
                 <p class="text-2xl">
@@ -295,7 +293,7 @@
             </div>
         </a>
         <div
-            class="col-span-1 bg-neutral-100 dark:bg-[#0E0E0E] border-2 border-neutral-300 dark:border-[#262626] rounded-2xl text-center py-8 content-center"
+            class="col-span-1 bg-neutral-100 dark:bg-neutral-950 border-2 border-neutral-200 dark:border-neutral-900 rounded-2xl text-center py-8 content-center"
         >
             <ul class="flex items-center justify-around">
                 <li>
@@ -340,7 +338,7 @@
         </div>
         <a href="##" class="col-span-2">
             <div
-                class="group bg-neutral-100 hover:bg-white dark:bg-[#0E0E0E] dark:hover:bg-black border-2 border-neutral-300 dark:border-[#262626] rounded-2xl space-y-4 py-8 transition duration-300"
+                class="group bg-neutral-100 hover:bg-white dark:bg-neutral-950 dark:hover:bg-black border-2 border-neutral-200 dark:border-neutral-900 rounded-2xl space-y-4 py-8 transition duration-300"
             >
                 <div class="flex items-center w-fit mx-auto gap-4">
                     <p class="text-2xl">Schedule a Call</p>
@@ -348,7 +346,7 @@
                         class="flex w-12 h-12 items-center justify-center bg-blue-500 rounded-full"
                     >
                         <i
-                            class="ph-bold ph-arrow-up-right text-xl group-hover:rotate-45 transition duration-300"
+                            class="ph-bold ph-arrow-up-right text-xl text-white group-hover:rotate-45 transition duration-300"
                         ></i>
                     </div>
                 </div>
