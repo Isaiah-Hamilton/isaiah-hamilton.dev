@@ -1,9 +1,9 @@
 <script lang="ts">
-    import bluesky from "$lib/assets/bluesky.svg";
-    import github from "$lib/assets/github.svg";
-    import linkedin from "$lib/assets/linkedin.svg";
-    import tangled from "$lib/assets/tangled.svg";
-    import Sky from "$lib/component/sky.svelte";
+    import Bluesky from "$lib/components/ui/icons/bluesky.svelte";
+    import Linkedin from "$lib/components/ui/icons/linkedin.svelte";
+    import Tangled from "$lib/components/ui/icons/tangled.svelte";
+    import Sky from "$lib/components/sky.svelte";
+    import Github from "$lib/components/ui/icons/github.svelte";
 
     let innerWidth = $state(0);
     let innerHeight = $state(0);
@@ -299,39 +299,24 @@
                 <li>
                     <a
                         href="https://bsky.app/profile/isaiah-hamilton.dev"
-                        target="_blank"
-                        ><img
-                            src={bluesky}
-                            alt="bluesky"
-                            class="w-10 h-10"
-                        /></a
+                        target="_blank"><Bluesky /></a
                     >
                 </li>
                 <li>
                     <a href="https://github.com/isaiah-hamilton" target="_blank"
-                        ><img src={github} alt="github" class="w-10 h-10" /></a
+                        ><Github /></a
                     >
                 </li>
                 <li>
                     <a
                         href="https://tangled.sh/isaiah-hamilton.dev"
-                        target="_blank"
-                        ><img
-                            src={tangled}
-                            alt="tangled"
-                            class="w-10 h-10"
-                        /></a
+                        target="_blank"><Tangled /></a
                     >
                 </li>
                 <li>
                     <a
                         href="https://linkedin.com/in/isaiah7hamilton"
-                        target="_blank"
-                        ><img
-                            src={linkedin}
-                            alt="linkedin"
-                            class="w-10 h-10"
-                        /></a
+                        target="_blank"><Linkedin /></a
                     >
                 </li>
             </ul>
