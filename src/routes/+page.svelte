@@ -116,7 +116,7 @@
         </div>
         <div class="space-y-4">
             <h1
-                class="text-6xl font-semibold leading-tight text-neutral-900/90"
+                class="text-6xl font-semibold leading-tight text-neutral-900/90 dark:text-neutral-100"
             >
                 I design and build modern experiences
             </h1>
@@ -127,7 +127,7 @@
                 for individuals and growing businesses.
             </p>
         </div>
-        <div class="flex items-center gap-2 w-fit mx-auto mt-8">
+        <div class="flex items-center gap-2 w-fit mx-auto mt-8 z-10">
             <a href="">
                 <div
                     class="transition duration-300 flex items-center h-10 w-30 rounded-full bg-neutral-100 dark:bg-neutral-950 shadow-[0px_0px_0px_0px_var(--color-neutral-200)] hover:shadow-[0px_0px_0px_3px_var(--color-neutral-200)] dark:shadow-[0px_0px_0px_0px_var(--color-neutral-900)] dark:hover:shadow-[0px_0px_0px_3px_var(--color-neutral-900)]"
