@@ -116,7 +116,7 @@
         </div>
         <div class="space-y-4">
             <h1
-                class="text-6xl font-semibold leading-tight text-neutral-900/90 dark:text-neutral-100"
+                class="text-6xl font-semibold leading-tight text-neutral-900/90 dark:text-neutral-100/90"
             >
                 I design and build modern experiences
             </h1>
