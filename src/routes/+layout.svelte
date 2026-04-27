@@ -1,24 +1,34 @@
 <script lang="ts">
     import "./layout.css";
     import favicon from "$lib/assets/favicon.svg";
+    import { onMount } from "svelte";
 
     let { children } = $props();
 
-    let isDark = $state(false);
+    type Theme = "light" | "dark";
+    let theme = $state<Theme>("light");
 
-    $effect(() => {
+    onMount(() => {
         if (typeof window === "undefined") return;
-
-        const saved = localStorage.getItem("theme");
-        isDark = saved === "dark";
-
-        document.documentElement.classList.toggle("dark", isDark);
+        theme = localStorage.getItem("theme") as Theme;
+        document.documentElement.classList.toggle("dark", theme === "dark");
+        document.documentElement.classList.toggle("light", theme === "light");
     });
 
     function toggleTheme() {
-        isDark = !isDark;
-        document.documentElement.classList.toggle("dark", isDark);
-        localStorage.setItem("theme", isDark ? "dark" : "light");
+        if (theme === "dark") {
+            theme = "light";
+            document.documentElement.classList.toggle("dark", false);
+            document.documentElement.classList.toggle("light", true);
+            localStorage.setItem("theme", theme);
+            return;
+        } else {
+            theme = "dark";
+            document.documentElement.classList.toggle("dark", true);
+            document.documentElement.classList.toggle("light", false);
+            localStorage.setItem("theme", theme);
+            return;
+        }
     }
 
     const year = new Date().getFullYear();
@@ -59,7 +69,7 @@
                 class="transition-colors duration-500 ease-out hover:text-neutral-900 dark:hover:text-neutral-100"
             >
                 <button onclick={() => toggleTheme()} class="">
-                    {#if isDark === true}
+                    {#if theme === "dark"}
                         <i class="ph-bold ph-sun"></i>
                     {:else}
                         <i class="ph-bold ph-moon"></i>
