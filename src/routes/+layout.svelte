@@ -1,12 +1,22 @@
 <script lang="ts">
     import "./layout.css";
     import favicon from "$lib/assets/favicon.svg";
-    import { onMount } from "svelte";
+    import { onMount, setContext } from "svelte";
 
     let { children } = $props();
 
     type Theme = "light" | "dark";
     let theme = $state<Theme>("light");
+    const themeState = {
+        get value() {
+            return theme;
+        },
+        set value(next: Theme) {
+            theme = next;
+        },
+    };
+
+    setContext("theme", themeState);
 
     onMount(() => {
         if (typeof window === "undefined") return;

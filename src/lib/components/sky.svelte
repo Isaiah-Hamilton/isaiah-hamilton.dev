@@ -1,15 +1,10 @@
 <script lang="ts">
     import { GenerateSkyGradient, GenerateStars, StarsOpacity } from "$lib/sky";
-    import { Time } from "$lib/sky/preset";
     import type { ColorStop, Star } from "$lib/sky/types";
 
-    let { time, innerWidth, innerHeight, children } = $props();
+    let { theme, innerWidth, innerHeight, children } = $props();
 
-    let isNight = $derived<boolean>(
-        time <= Time.sunrise || time >= Time.sunset,
-    );
-
-    let skyGradient = $derived(GenerateSkyGradient(time));
+    let skyGradient = $derived(GenerateSkyGradient(theme));
 
     let gradient = $derived.by(() => {
         const stops = skyGradient
@@ -21,7 +16,7 @@
     let stars = $state<Star[]>([]);
 
     $effect(() => {
-        stars = isNight ? GenerateStars() : [];
+        stars = theme === "dark" ? GenerateStars() : [];
     });
 </script>
 

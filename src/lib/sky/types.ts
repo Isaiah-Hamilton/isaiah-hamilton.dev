@@ -1,8 +1,7 @@
 export type RGB = [number, number, number];
 
 export interface SkyGradient {
-  time: number;
-  spread: number;
+  theme: "dark" | "light";
   colors: ColorStop[];
 }
 

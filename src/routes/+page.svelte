@@ -4,20 +4,13 @@
     import Tangled from "$lib/components/ui/icons/tangled.svelte";
     import Sky from "$lib/components/sky.svelte";
     import Github from "$lib/components/ui/icons/github.svelte";
+    import { getContext } from "svelte";
+
+    type Theme = "light" | "dark";
+    const themeState = getContext<{ value: Theme }>("theme");
 
     let innerWidth = $state(0);
     let innerHeight = $state(0);
-
-    let now = $state(new Date());
-    let time = $derived(now.getHours() + now.getMinutes() / 60);
-
-    $effect(() => {
-        let interval = setInterval(() => {
-            now = new Date();
-        }, 1000); // HACK: 1 second
-
-        return () => clearInterval(interval);
-    });
 
     const services = [
         {
@@ -95,7 +88,7 @@
 
 <svelte:window bind:innerWidth bind:innerHeight />
 
-<Sky {time} {innerWidth} {innerHeight}>
+<Sky theme={themeState.value} {innerWidth} {innerHeight}>
     <div
         class="h-full flex flex-col items-center justify-center max-w-xl mx-auto text-center"
     >

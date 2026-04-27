@@ -1,4 +1,4 @@
-import { SkyPresets, Time } from "./preset";
+import { SkyPresets } from "./preset";
 import type { RGB, ColorStop, Star } from "./types";
 
 function clamp(value: number, min = 0, max = 1): number {
@@ -25,14 +25,6 @@ function lerpColor(start: RGB, end: RGB, blend: number): RGB {
 }
 
 /**
- * Gaussian bell curve — returns 0–1 weight.
- * sigma controls how wide the transition window is (in hours).
- */
-function gaussian(delta: number, sigma: number): number {
-  return Math.exp(-(delta * delta) / (2 * sigma * sigma));
-}
-
-/**
  * Samples a gradient at a given position by interpolating the two nearest color stops.
  */
 function sampleGradient(stops: ColorStop[], pos: number): RGB {
@@ -52,45 +44,25 @@ function sampleGradient(stops: ColorStop[], pos: number): RGB {
 }
 
 /**
- * Circular distance between two times on a 24h clock (in hours).
- */
-function circularDelta(a: number, b: number): number {
-  const diff = Math.abs(a - b) % 24;
-  return diff > 12 ? 24 - diff : diff;
-}
-
-/**
- * Returns an array of interpolated ColorStops for the current hour.
+ * Returns an array of interpolated ColorStops for the selected theme preset.
  *
- * @param hour     - current decimal hour (e.g. 6.5 = 6:30 AM)
+ * @param theme    - the sky theme to render
  * @param steps    - number of output color stops (default 8)
  */
-export function GenerateSkyGradient(hour: number, steps = 8): ColorStop[] {
-  // Compute raw gaussian weight for each preset
-  const weights = SkyPresets.map((p) => ({
-    preset: p,
-    weight: gaussian(circularDelta(hour, p.time), p.spread),
-  }));
+export function GenerateSkyGradient(
+  theme: "dark" | "light",
+  steps = 8,
+): ColorStop[] {
+  const preset = SkyPresets.find((p) => p.theme === theme) ?? SkyPresets[0];
+  const safeSteps = Math.max(2, steps);
 
-  const totalWeight = weights.reduce((s, w) => s + w.weight, 0);
+  return Array.from({ length: safeSteps }, (_, i) => {
+    const t = i / (safeSteps - 1);
+    const eased = smoothstep(0, 1, t);
+    const position = eased * 100;
+    const rgb = sampleGradient(preset.colors, position);
 
-  // Build output stops at evenly distributed positions 0–100
-  return Array.from({ length: steps }, (_, i) => {
-    const position = (i / (steps - 1)) * 100;
-
-    // For each position, sample every preset's gradient then blend by weight
-    let r = 0,
-      g = 0,
-      b = 0;
-    for (const { preset, weight } of weights) {
-      const sampled = sampleGradient(preset.colors, position);
-      const t = weight / totalWeight;
-      r += sampled[0] * t;
-      g += sampled[1] * t;
-      b += sampled[2] * t;
-    }
-
-    return { rgb: [r, g, b], position };
+    return { rgb, position };
   });
 }
 
