@@ -2,7 +2,7 @@ import type { SkyGradient } from "./types";
 
 export const SkyPresets: SkyGradient[] = [
   {
-    theme: "dark",
+    dark: true,
     colors: [
       {
         rgb: [2, 6, 12],
@@ -23,7 +23,7 @@ export const SkyPresets: SkyGradient[] = [
     ],
   },
   {
-    theme: "light",
+    dark: false,
     colors: [
       {
         rgb: [47, 111, 232],

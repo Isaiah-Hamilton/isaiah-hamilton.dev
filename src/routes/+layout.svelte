@@ -5,14 +5,13 @@
 
     let { children } = $props();
 
-    type Theme = "light" | "dark";
-    let theme = $state<Theme>("light");
+    let isDark = $state(false);
     const themeState = {
         get value() {
-            return theme;
+            return isDark;
         },
-        set value(next: Theme) {
-            theme = next;
+        set value(next: boolean) {
+            isDark = next;
         },
     };
 
@@ -20,25 +19,14 @@
 
     onMount(() => {
         if (typeof window === "undefined") return;
-        theme = localStorage.getItem("theme") as Theme;
-        document.documentElement.classList.toggle("dark", theme === "dark");
-        document.documentElement.classList.toggle("light", theme === "light");
+        isDark = localStorage.getItem("isDark") === "true";
+        document.documentElement.classList.toggle("dark", isDark);
     });
 
     function toggleTheme() {
-        if (theme === "dark") {
-            theme = "light";
-            document.documentElement.classList.toggle("dark", false);
-            document.documentElement.classList.toggle("light", true);
-            localStorage.setItem("theme", theme);
-            return;
-        } else {
-            theme = "dark";
-            document.documentElement.classList.toggle("dark", true);
-            document.documentElement.classList.toggle("light", false);
-            localStorage.setItem("theme", theme);
-            return;
-        }
+        isDark = !isDark;
+        document.documentElement.classList.toggle("dark", isDark);
+        localStorage.setItem("isDark", isDark ? "true" : "false");
     }
 
     const year = new Date().getFullYear();
@@ -79,7 +67,7 @@
                 class="transition-colors duration-500 ease-out hover:text-neutral-900 dark:hover:text-neutral-100"
             >
                 <button onclick={() => toggleTheme()} class="">
-                    {#if theme === "dark"}
+                    {#if isDark}
                         <i class="ph-bold ph-sun"></i>
                     {:else}
                         <i class="ph-bold ph-moon"></i>

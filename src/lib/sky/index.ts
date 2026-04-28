@@ -46,14 +46,11 @@ function sampleGradient(stops: ColorStop[], pos: number): RGB {
 /**
  * Returns an array of interpolated ColorStops for the selected theme preset.
  *
- * @param theme    - the sky theme to render
+ * @param isDark    - the sky theme to render
  * @param steps    - number of output color stops (default 8)
  */
-export function GenerateSkyGradient(
-  theme: "dark" | "light",
-  steps = 8,
-): ColorStop[] {
-  const preset = SkyPresets.find((p) => p.theme === theme) ?? SkyPresets[0];
+export function GenerateSkyGradient(isDark: boolean, steps = 8): ColorStop[] {
+  const preset = SkyPresets.find((p) => p.dark === isDark) ?? SkyPresets[0];
   const safeSteps = Math.max(2, steps);
 
   return Array.from({ length: safeSteps }, (_, i) => {
