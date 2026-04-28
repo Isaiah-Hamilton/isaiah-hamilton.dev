@@ -14,28 +14,40 @@
 
     const services = [
         {
-            icon: "paint brush",
-            title: "Branding & Identity",
+            icon: {
+                name: "pipe-wrench",
+                color: "text-green-500",
+            },
+            title: "Full-Stack Development",
             description:
-                "Creating logos, visual styles, and entire brand identities that help your business stand out.",
+                "End-to-end web apps built with modern frameworks. From database schema to polished UI.",
         },
         {
-            icon: "paint brush",
-            title: "Branding & Identity",
+            icon: {
+                name: "lightning",
+                color: "text-yellow-500",
+            },
+            title: "Performance & Optimization",
             description:
-                "Creating logos, visual styles, and entire brand identities that help your business stand out.",
+                "Auditing and refactoring codebases for speed, scalability, and maintainability.",
         },
         {
-            icon: "paint brush",
-            title: "Branding & Identity",
+            icon: {
+                name: "plugs",
+                color: "text-red-500",
+            },
+            title: "API Design & Integration",
             description:
-                "Creating logos, visual styles, and entire brand identities that help your business stand out.",
+                "RESTful and GraphQL APIs, third-party integrations, and backend architecture.",
         },
         {
-            icon: "paint brush",
-            title: "Branding & Identity",
+            icon: {
+                name: "brackets-curly",
+                color: "text-blue-500",
+            },
+            title: "Dev Tooling & Automation",
             description:
-                "Creating logos, visual styles, and entire brand identities that help your business stand out.",
+                "CI/CD pipelines, developer workflows, and anything that saves your team hours.",
         },
     ];
 
@@ -76,7 +88,7 @@
 
     const faqs = [
         {
-            question: "What type of projects do you work on?",
+            question: "What kinds of projects do you take on?",
             answer: "I mainly create clean, modern, high-converting portfolio websites for designers, photographers, creators, agencies, and personal brands. If your work deserves a polished online presence, I can build it.",
         },
     ];
@@ -151,6 +163,7 @@
         </div>
     </div>
 </Sky>
+
 <div class="container mx-auto">
     <div class="mx-4 lg:mx-0 mt-40 space-y-14">
         <div class="text-center">
@@ -160,19 +173,25 @@
             <h2
                 class="text-3xl md:text-5xl font-semibold leading-tight mt-6 max-w-2xs md:max-w-110 mx-auto"
             >
-                Here's what I bring to the table for you
+                Here's what I bring to the stack
             </h2>
             <p class="text-base text-neutral-500 mt-4 max-w-xs mx-auto">
-                An overview of the core services I provide, no matter the
-                project size or type.
+                A breakdown of where I add value — whether you need a full
+                product built from scratch or just the right engineer to level
+                up your team.
             </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-200 mx-auto">
             {#each services as service}
                 <div
-                    class="space-y-6 bg-neutral-100 dark:bg-neutral-950 border-2 border-neutral-200 dark:border-neutral-900 rounded-2xl px-8 py-6"
+                    class="bg-neutral-100 dark:bg-neutral-950 border-2 border-neutral-200 dark:border-neutral-900 rounded-2xl px-8 py-6"
                 >
-                    <div>{service.icon}</div>
+                    <div class="mb-4">
+                        <i
+                            class="ph-bold ph-{service.icon.name} {service.icon
+                                .color} text-2xl"
+                        ></i>
+                    </div>
                     <div class="space-y-2">
                         <h3 class="text-2xl font-semibold">{service.title}</h3>
                         <p class="text-base text-neutral-500">
@@ -192,11 +211,11 @@
             <h2
                 class="text-3xl md:text-5xl font-semibold leading-tight mt-6 max-w-2xs md:max-w-110 mx-auto"
             >
-                Take a closer look at some of my works
+                A closer look at what I've shipped
             </h2>
             <p class="text-base text-neutral-500 mt-4 max-w-xs mx-auto">
-                A selection of projects that showcase my approach, style, and
-                attention to detail.
+                Real projects. Real problems solved. Each one reflects how I
+                think, architect, and execute.
             </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-200 mx-auto">
@@ -237,9 +256,8 @@
                 Some of my frequently asked questions
             </h2>
             <p class="text-base text-neutral-500 mt-4 max-w-xs mx-auto">
-                A quick collection of helpful answers so you can get clarity
-                fast. If there’s anything else you’re wondering about, just
-                reach out!
+                Quick answers to the most common questions. Don't see yours?
+                Just reach out.
             </p>
         </div>
         <div class="max-w-200 mx-auto">
@@ -285,11 +303,12 @@
             <h2
                 class="text-3xl md:text-5xl font-semibold leading-tight mt-6 max-w-sm mx-auto"
             >
-                Shoot me a DM, let's discuss your next project
+                Let's build something worth shipping.
             </h2>
             <p class="text-neutral-500 mt-4 max-w-xs mx-auto">
-                Whether you want to send an email, drop a quick message, or hop
-                on a call — I'm here and excited to hear what you're working on.
+                Have an idea, a codebase that needs help, or a role you think
+                I'd be a fit for? Drop me a message — I read everything and
+                respond fast.
             </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-200 mx-auto">
