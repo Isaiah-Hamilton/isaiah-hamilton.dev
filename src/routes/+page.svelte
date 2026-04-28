@@ -98,7 +98,7 @@
                 Here's what I bring to the stack
             </h2>
             <p class="text-base text-neutral-500 mt-4 max-w-sm mx-auto">
-                A breakdown of where I add value — whether you need a full
+                A breakdown of where I add value! Whether you need a full
                 product built from scratch or just the right engineer to level
                 up your team.
             </p>
