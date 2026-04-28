@@ -175,7 +175,7 @@
             >
                 Here's what I bring to the stack
             </h2>
-            <p class="text-base text-neutral-500 mt-4 max-w-xs mx-auto">
+            <p class="text-base text-neutral-500 mt-4 max-w-sm mx-auto">
                 A breakdown of where I add value — whether you need a full
                 product built from scratch or just the right engineer to level
                 up your team.
@@ -211,9 +211,9 @@
             <h2
                 class="text-3xl md:text-5xl font-semibold leading-tight mt-6 max-w-2xs md:max-w-110 mx-auto"
             >
-                A closer look at what I've shipped
+                Take a closer look at what I've shipped
             </h2>
-            <p class="text-base text-neutral-500 mt-4 max-w-xs mx-auto">
+            <p class="text-base text-neutral-500 mt-4 max-w-sm mx-auto">
                 Real projects. Real problems solved. Each one reflects how I
                 think, architect, and execute.
             </p>
@@ -255,7 +255,7 @@
             >
                 Some of my frequently asked questions
             </h2>
-            <p class="text-base text-neutral-500 mt-4 max-w-xs mx-auto">
+            <p class="text-base text-neutral-500 mt-4 max-w-95 mx-auto">
                 Quick answers to the most common questions. Don't see yours?
                 Just reach out.
             </p>
@@ -301,14 +301,13 @@
                 Get Started
             </p>
             <h2
-                class="text-3xl md:text-5xl font-semibold leading-tight mt-6 max-w-sm mx-auto"
+                class="text-3xl md:text-5xl font-semibold leading-tight mt-6 max-w-lg mx-auto"
             >
                 Let's build something worth shipping.
             </h2>
-            <p class="text-neutral-500 mt-4 max-w-xs mx-auto">
+            <p class="text-neutral-500 mt-4 max-w-sm mx-auto">
                 Have an idea, a codebase that needs help, or a role you think
-                I'd be a fit for? Drop me a message — I read everything and
-                respond fast.
+                I'd be a fit for? Drop me a message.
             </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-200 mx-auto">
