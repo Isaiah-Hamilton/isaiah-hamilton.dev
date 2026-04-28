@@ -72,6 +72,8 @@
         },
     ];
 
+    const workAccentColors = ["red", "blue", "green", "yellow"] as const;
+
     const faqs = [
         {
             question: "What type of projects do you work on?",
@@ -149,199 +151,206 @@
         </div>
     </div>
 </Sky>
-<div class="mx-4 mt-40 space-y-14">
-    <div class="text-center">
-        <p class="text-xs md:text-sm font-semibold text-neutral-500">
-            Services
-        </p>
-        <h2
-            class="text-3xl md:text-5xl font-semibold leading-tight mt-6 max-w-2xs md:max-w-110 mx-auto"
-        >
-            Here's what I bring to the table for you
-        </h2>
-        <p class="text-base text-neutral-500 mt-4 max-w-xs mx-auto">
-            An overview of the core services I provide, no matter the project
-            size or type.
-        </p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-200 mx-auto">
-        {#each services as service}
-            <div
-                class="space-y-6 bg-neutral-100 dark:bg-neutral-950 border-2 border-neutral-200 dark:border-neutral-900 rounded-2xl px-8 py-6"
+<div class="container mx-auto">
+    <div class="mx-4 lg:mx-0 mt-40 space-y-14">
+        <div class="text-center">
+            <p class="text-xs md:text-sm font-semibold text-neutral-500">
+                Services
+            </p>
+            <h2
+                class="text-3xl md:text-5xl font-semibold leading-tight mt-6 max-w-2xs md:max-w-110 mx-auto"
             >
-                <div>{service.icon}</div>
-                <div class="space-y-2">
-                    <h3 class="text-2xl font-semibold">{service.title}</h3>
-                    <p class="text-base text-neutral-500">
-                        {service.description}
-                    </p>
-                </div>
-            </div>
-        {/each}
-    </div>
-</div>
-
-<div class="mx-4 mt-40 space-y-14">
-    <div class="text-center">
-        <p class="text-xs md:text-sm font-semibold text-neutral-500">Works</p>
-        <h2
-            class="text-3xl md:text-5xl font-semibold leading-tight mt-6 max-w-2xs md:max-w-110 mx-auto"
-        >
-            Take a closer look at some of my works
-        </h2>
-        <p class="text-base text-neutral-500 mt-4 max-w-xs mx-auto">
-            A selection of projects that showcase my approach, style, and
-            attention to detail.
-        </p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-200 mx-auto">
-        {#each works as work}
-            <div
-                class="group space-y-2 bg-neutral-100 dark:bg-neutral-950 border-2 border-neutral-200 dark:border-neutral-900 rounded-2xl px-2 py-2"
-            >
-                <div class="overflow-hidden rounded-xl">
-                    <img
-                        src={work.image}
-                        alt={work.title}
-                        class="rounded-xl group-hover:scale-105 transition duration-300"
-                    />
-                </div>
-                <div class="flex items-end justify-between">
-                    <div class="space-y-0 md:space-y-2">
-                        <h3 class="text-base font-medium">{work.title}</h3>
-                        <p class="text-sm font-semibold text-neutral-500">
-                            {work.description}
+                Here's what I bring to the table for you
+            </h2>
+            <p class="text-base text-neutral-500 mt-4 max-w-xs mx-auto">
+                An overview of the core services I provide, no matter the
+                project size or type.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-200 mx-auto">
+            {#each services as service}
+                <div
+                    class="space-y-6 bg-neutral-100 dark:bg-neutral-950 border-2 border-neutral-200 dark:border-neutral-900 rounded-2xl px-8 py-6"
+                >
+                    <div>{service.icon}</div>
+                    <div class="space-y-2">
+                        <h3 class="text-2xl font-semibold">{service.title}</h3>
+                        <p class="text-base text-neutral-500">
+                            {service.description}
                         </p>
                     </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right text-xl group-hover:rotate-45 transition duration-300 pr-1"
-                    ></i>
                 </div>
-            </div>
-        {/each}
-    </div>
-</div>
-
-<div class="mx-4 mt-40 space-y-14">
-    <div class="text-center">
-        <p class="text-xs md:text-sm font-semibold text-neutral-500">FAQ</p>
-        <h2
-            class="text-3xl md:text-5xl font-semibold leading-tight mt-6 max-w-sm md:max-w-140 mx-auto"
-        >
-            Some of my frequently asked questions
-        </h2>
-        <p class="text-base text-neutral-500 mt-4 max-w-xs mx-auto">
-            A quick collection of helpful answers so you can get clarity fast.
-            If there’s anything else you’re wondering about, just reach out!
-        </p>
-    </div>
-    <div class="max-w-200 mx-auto">
-        {#each faqs as faq}
-            <button
-                class="space-y-4 bg-neutral-100 dark:bg-neutral-950 px-8 py-6 w-full {openFAQuestion ===
-                faq.question
-                    ? 'rounded-[40px]'
-                    : 'rounded-full'}"
-                onclick={() => toggleFAQ(faq.question)}
-            >
-                <div class="flex items-center justify-between">
-                    <h3 class="text-base md:text-lg font-medium">
-                        {faq.question}
-                    </h3>
-                    <div
-                        class="px-2 py-1 bg-neutral-200 dark:bg-neutral-900 rounded-full text-neutral-500 dark:text-neutral-100"
-                    >
-                        {#if openFAQuestion === faq.question}
-                            <i class="ph-bold ph-minus"></i>
-                        {:else}
-                            <i class="ph-bold ph-plus"></i>
-                        {/if}
-                    </div>
-                </div>
-                {#if openFAQuestion === faq.question}
-                    <p
-                        class="text-left text-[15px] font-semibold text-neutral-500 max-w-xl"
-                    >
-                        {faq.answer}
-                    </p>
-                {/if}
-            </button>
-        {/each}
-    </div>
-</div>
-
-<div class="mx-4 mt-40 space-y-14">
-    <div class="text-center">
-        <p class="text-xs md:text-sm font-semibold text-neutral-500">
-            Get Started
-        </p>
-        <h2
-            class="text-3xl md:text-5xl font-semibold leading-tight mt-6 max-w-sm mx-auto"
-        >
-            Shoot me a DM, let's discuss your next project
-        </h2>
-        <p class="text-neutral-500 mt-4 max-w-xs mx-auto">
-            Whether you want to send an email, drop a quick message, or hop on a
-            call — I'm here and excited to hear what you're working on.
-        </p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-200 mx-auto">
-        <!-- TODO: make contact form -->
-        <a href="mailto:hello@isaiah-hamilton.dev">
-            <div
-                class="col-span-1 bg-neutral-100 hover:bg-white dark:bg-neutral-950 dark:hover:bg-black border-2 border-neutral-200 dark:border-neutral-900 rounded-2xl text-center space-y-4 py-8 transition duration-300"
-            >
-                <p class="text-sm text-neutral-500">Email Me</p>
-                <p class="text-2xl">
-                    hello<span class="text-green-500">@</span
-                    >isaiah-hamilton<span class="text-pink-500">.</span>dev
-                </p>
-            </div>
-        </a>
-        <div
-            class="col-span-1 bg-neutral-100 dark:bg-neutral-950 border-2 border-neutral-200 dark:border-neutral-900 rounded-2xl text-center py-8 content-center"
-        >
-            <ul class="flex items-center justify-around">
-                <li class="transition duration-300 hover:scale-110">
-                    <a
-                        href="https://bsky.app/profile/isaiah-hamilton.dev"
-                        target="_blank"><Bluesky /></a
-                    >
-                </li>
-                <li class="transition duration-300 hover:scale-110">
-                    <a href="https://github.com/isaiah-hamilton" target="_blank"
-                        ><Github /></a
-                    >
-                </li>
-                <li class="transition duration-300 hover:scale-110">
-                    <a
-                        href="https://tangled.sh/isaiah-hamilton.dev"
-                        target="_blank"><Tangled /></a
-                    >
-                </li>
-                <li class="transition duration-300 hover:scale-110">
-                    <a
-                        href="https://linkedin.com/in/isaiah7hamilton"
-                        target="_blank"><Linkedin /></a
-                    >
-                </li>
-            </ul>
+            {/each}
         </div>
-        <a href="##" class="col-span-1 md:col-span-2">
-            <div
-                class="group bg-neutral-100 hover:bg-white dark:bg-neutral-950 dark:hover:bg-black border-2 border-neutral-200 dark:border-neutral-900 rounded-2xl space-y-4 py-8 transition duration-300"
+    </div>
+
+    <div class="mx-4 lg:mx-0 mt-40 space-y-14">
+        <div class="text-center">
+            <p class="text-xs md:text-sm font-semibold text-neutral-500">
+                Works
+            </p>
+            <h2
+                class="text-3xl md:text-5xl font-semibold leading-tight mt-6 max-w-2xs md:max-w-110 mx-auto"
             >
-                <div class="flex items-center w-fit mx-auto gap-4">
-                    <p class="text-2xl">Schedule a Call</p>
-                    <div
-                        class="flex w-12 h-12 items-center justify-center bg-blue-500 rounded-full"
-                    >
+                Take a closer look at some of my works
+            </h2>
+            <p class="text-base text-neutral-500 mt-4 max-w-xs mx-auto">
+                A selection of projects that showcase my approach, style, and
+                attention to detail.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-200 mx-auto">
+            {#each works as work, index}
+                <div
+                    class="group space-y-2 bg-neutral-100 dark:bg-neutral-950 border-2 border-neutral-200 dark:border-neutral-900 rounded-2xl px-2 py-2"
+                >
+                    <div class="overflow-hidden rounded-xl">
+                        <img
+                            src={work.image}
+                            alt={work.title}
+                            class="rounded-xl group-hover:scale-105 transition duration-300"
+                        />
+                    </div>
+                    <div class="flex items-end justify-between">
+                        <div class="space-y-0 md:space-y-2">
+                            <h3 class="text-base font-medium">{work.title}</h3>
+                            <p class="text-sm font-semibold text-neutral-500">
+                                {work.description}
+                            </p>
+                        </div>
                         <i
-                            class="ph-bold ph-arrow-up-right text-xl text-white group-hover:rotate-45 transition duration-300"
+                            class="ph-bold ph-arrow-up-right text-xl group-hover:rotate-45 transition duration-300 pr-1"
+                            style:color={`var(--color-${workAccentColors[index % workAccentColors.length]}-500)`}
                         ></i>
                     </div>
                 </div>
+            {/each}
+        </div>
+    </div>
+
+    <div class="mx-4 lg:mx-0 mt-40 space-y-14">
+        <div class="text-center">
+            <p class="text-xs md:text-sm font-semibold text-neutral-500">FAQ</p>
+            <h2
+                class="text-3xl md:text-5xl font-semibold leading-tight mt-6 max-w-sm md:max-w-140 mx-auto"
+            >
+                Some of my frequently asked questions
+            </h2>
+            <p class="text-base text-neutral-500 mt-4 max-w-xs mx-auto">
+                A quick collection of helpful answers so you can get clarity
+                fast. If there’s anything else you’re wondering about, just
+                reach out!
+            </p>
+        </div>
+        <div class="max-w-200 mx-auto">
+            {#each faqs as faq}
+                <button
+                    class="space-y-4 bg-neutral-100 dark:bg-neutral-950 px-8 py-6 w-full {openFAQuestion ===
+                    faq.question
+                        ? 'rounded-[40px]'
+                        : 'rounded-full'}"
+                    onclick={() => toggleFAQ(faq.question)}
+                >
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-base md:text-lg font-medium">
+                            {faq.question}
+                        </h3>
+                        <div
+                            class="px-2 py-1 bg-neutral-200 dark:bg-neutral-900 rounded-full text-neutral-500 dark:text-neutral-100"
+                        >
+                            {#if openFAQuestion === faq.question}
+                                <i class="ph-bold ph-minus"></i>
+                            {:else}
+                                <i class="ph-bold ph-plus"></i>
+                            {/if}
+                        </div>
+                    </div>
+                    {#if openFAQuestion === faq.question}
+                        <p
+                            class="text-left text-[15px] font-semibold text-neutral-500 max-w-xl"
+                        >
+                            {faq.answer}
+                        </p>
+                    {/if}
+                </button>
+            {/each}
+        </div>
+    </div>
+
+    <div class="mx-4 lg:mx-0 mt-40 space-y-14">
+        <div class="text-center">
+            <p class="text-xs md:text-sm font-semibold text-neutral-500">
+                Get Started
+            </p>
+            <h2
+                class="text-3xl md:text-5xl font-semibold leading-tight mt-6 max-w-sm mx-auto"
+            >
+                Shoot me a DM, let's discuss your next project
+            </h2>
+            <p class="text-neutral-500 mt-4 max-w-xs mx-auto">
+                Whether you want to send an email, drop a quick message, or hop
+                on a call — I'm here and excited to hear what you're working on.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-200 mx-auto">
+            <!-- TODO: make contact form -->
+            <a href="mailto:hello@isaiah-hamilton.dev">
+                <div
+                    class="col-span-1 bg-neutral-100 hover:bg-white dark:bg-neutral-950 dark:hover:bg-black border-2 border-neutral-200 dark:border-neutral-900 rounded-2xl text-center space-y-4 py-8 transition duration-300"
+                >
+                    <p class="text-sm text-neutral-500">Email Me</p>
+                    <p class="text-2xl">
+                        hello<span class="text-green-500">@</span
+                        >isaiah-hamilton<span class="text-pink-500">.</span>dev
+                    </p>
+                </div>
+            </a>
+            <div
+                class="col-span-1 bg-neutral-100 dark:bg-neutral-950 border-2 border-neutral-200 dark:border-neutral-900 rounded-2xl text-center py-8 content-center"
+            >
+                <ul class="flex items-center justify-around">
+                    <li class="transition duration-300 hover:scale-110">
+                        <a
+                            href="https://bsky.app/profile/isaiah-hamilton.dev"
+                            target="_blank"><Bluesky /></a
+                        >
+                    </li>
+                    <li class="transition duration-300 hover:scale-110">
+                        <a
+                            href="https://github.com/isaiah-hamilton"
+                            target="_blank"><Github /></a
+                        >
+                    </li>
+                    <li class="transition duration-300 hover:scale-110">
+                        <a
+                            href="https://tangled.sh/isaiah-hamilton.dev"
+                            target="_blank"><Tangled /></a
+                        >
+                    </li>
+                    <li class="transition duration-300 hover:scale-110">
+                        <a
+                            href="https://linkedin.com/in/isaiah7hamilton"
+                            target="_blank"><Linkedin /></a
+                        >
+                    </li>
+                </ul>
             </div>
-        </a>
+            <a href="##" class="col-span-1 md:col-span-2">
+                <div
+                    class="group bg-neutral-100 hover:bg-white dark:bg-neutral-950 dark:hover:bg-black border-2 border-neutral-200 dark:border-neutral-900 rounded-2xl space-y-4 py-8 transition duration-300"
+                >
+                    <div class="flex items-center w-fit mx-auto gap-4">
+                        <p class="text-2xl">Schedule a Call</p>
+                        <div
+                            class="flex w-12 h-12 items-center justify-center bg-blue-500 rounded-full"
+                        >
+                            <i
+                                class="ph-bold ph-arrow-up-right text-xl text-white group-hover:rotate-45 transition duration-300"
+                            ></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
     </div>
 </div>

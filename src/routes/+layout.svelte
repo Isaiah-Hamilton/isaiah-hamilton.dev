@@ -95,8 +95,10 @@
         class="container mx-auto border-t border-neutral-100 dark:border-neutral-900 mt-10 px-4"
     >
         <div class="py-4">
-            <p class="text-sm text-neutral-500">
-                {year} © Isaiah Hamilton
+            <p class="flex items-center text-sm text-neutral-500 space-x-1">
+                <span>{year}</span><i class="ph-bold ph-copyright"></i><span
+                    >Isaiah Hamilton</span
+                >
             </p>
         </div>
     </footer>
