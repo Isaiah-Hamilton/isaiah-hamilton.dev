@@ -31,7 +31,7 @@
         <div class="w-fit mx-auto">
             <img
                 class="rounded-full w-24 h-24 mx-auto border-2 border-neutral-200 dark:border-neutral-900"
-                src="https://selfhosted.social/xrpc/com.atproto.sync.getBlob?did=did:plc:kal7cndv3fyeyo3qw3ejixmd&cid=bafkreifwlccr5hlzq6v4az7tlibhr4aqq3xckuifejmkgwxejjysnudpue"
+                src="/pfp.jpg"
                 alt="Isaiah Hamilton"
             />
             <div
