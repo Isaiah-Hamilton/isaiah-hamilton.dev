@@ -5,6 +5,7 @@
     import Sky from "$lib/components/sky.svelte";
     import Github from "$lib/components/ui/icons/github.svelte";
     import { getContext } from "svelte";
+    import { FAQs, Services, Works } from "$lib/consts";
 
     type Theme = "light" | "dark";
     const themeState = getContext<{ value: Theme }>("theme");
@@ -12,61 +13,7 @@
     let innerWidth = $state(0);
     let innerHeight = $state(0);
 
-    const services = [
-        {
-            icon: {
-                name: "pipe-wrench",
-                color: "text-green-500",
-            },
-            title: "Full-Stack Development",
-            description:
-                "End-to-end web apps built with modern frameworks. From database schema to polished UI.",
-        },
-        {
-            icon: {
-                name: "lightning",
-                color: "text-yellow-500",
-            },
-            title: "Performance & Optimization",
-            description:
-                "Auditing and refactoring codebases for speed, scalability, and maintainability.",
-        },
-        {
-            icon: {
-                name: "plugs",
-                color: "text-red-500",
-            },
-            title: "API Design & Integration",
-            description:
-                "RESTful and GraphQL APIs, third-party integrations, and backend architecture.",
-        },
-        {
-            icon: {
-                name: "brackets-curly",
-                color: "text-blue-500",
-            },
-            title: "Dev Tooling & Automation",
-            description:
-                "CI/CD pipelines, developer workflows, and anything that saves your team hours.",
-        },
-    ];
-
-    const works = [
-        {
-            title: "Violet",
-            description: "Framer Template",
-            image: "https://framerusercontent.com/images/7VybckhbrXvFd1uHTiacrudPcXM.png?width=1000&height=750",
-        },
-    ];
-
     const workAccentColors = ["red", "blue", "green", "yellow"] as const;
-
-    const faqs = [
-        {
-            question: "What kinds of projects do you take on?",
-            answer: "I mainly create clean, modern, high-converting portfolio websites for designers, photographers, creators, agencies, and personal brands. If your work deserves a polished online presence, I can build it.",
-        },
-    ];
 
     let openFAQuestion = $state("");
 
@@ -157,7 +104,7 @@
             </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-200 mx-auto">
-            {#each services as service}
+            {#each Services as service}
                 <div
                     class="bg-neutral-100 dark:bg-neutral-950 border-2 border-neutral-200 dark:border-neutral-900 rounded-2xl px-8 py-6"
                 >
@@ -194,7 +141,7 @@
             </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-200 mx-auto">
-            {#each works as work, index}
+            {#each Works as work, index}
                 <div
                     class="group space-y-2 bg-neutral-100 dark:bg-neutral-950 border-2 border-neutral-200 dark:border-neutral-900 rounded-2xl px-2 py-2"
                 >
@@ -236,7 +183,7 @@
             </p>
         </div>
         <div class="max-w-200 mx-auto">
-            {#each faqs as faq}
+            {#each FAQs as faq}
                 <button
                     class="space-y-4 bg-neutral-100 dark:bg-neutral-950 px-8 py-6 w-full {openFAQuestion ===
                     faq.question
