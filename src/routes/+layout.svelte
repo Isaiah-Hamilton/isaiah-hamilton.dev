@@ -32,15 +32,6 @@
     const year = new Date().getFullYear();
 </script>
 
-<svelte:head>
-    <link rel="icon" href={favicon} />
-    <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://esm.sh/@phosphor-icons/web@2.1.2/src/bold/style.css"
-    />
-</svelte:head>
-
 <div class="relative">
     <nav
         class="fixed top-4 left-1/2 transform -translate-x-1/2 z-20 w-fit mx-auto border border-neutral-300 dark:border-neutral-900 rounded-full px-4 py-2 backdrop-blur-md bg-neutral-100 dark:bg-neutral-950/80"
