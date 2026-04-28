@@ -57,31 +57,6 @@
             description: "Framer Template",
             image: "https://framerusercontent.com/images/7VybckhbrXvFd1uHTiacrudPcXM.png?width=1000&height=750",
         },
-        {
-            title: "Violet",
-            description: "Framer Template",
-            image: "https://framerusercontent.com/images/7VybckhbrXvFd1uHTiacrudPcXM.png?width=1000&height=750",
-        },
-        {
-            title: "Violet",
-            description: "Framer Template",
-            image: "https://framerusercontent.com/images/7VybckhbrXvFd1uHTiacrudPcXM.png?width=1000&height=750",
-        },
-        {
-            title: "Violet",
-            description: "Framer Template",
-            image: "https://framerusercontent.com/images/7VybckhbrXvFd1uHTiacrudPcXM.png?width=1000&height=750",
-        },
-        {
-            title: "Violet",
-            description: "Framer Template",
-            image: "https://framerusercontent.com/images/7VybckhbrXvFd1uHTiacrudPcXM.png?width=1000&height=750",
-        },
-        {
-            title: "Violet",
-            description: "Framer Template",
-            image: "https://framerusercontent.com/images/7VybckhbrXvFd1uHTiacrudPcXM.png?width=1000&height=750",
-        },
     ];
 
     const workAccentColors = ["red", "blue", "green", "yellow"] as const;
