@@ -90,7 +90,7 @@
 
 <Sky theme={themeState.value} {innerWidth} {innerHeight}>
     <div
-        class="h-full flex flex-col items-center justify-center max-w-xl mx-auto text-center"
+        class="h-full flex flex-col items-center justify-center max-w-sm md:max-w-xl mx-auto text-center"
     >
         <div class="w-fit mx-auto">
             <img
@@ -109,19 +109,19 @@
                         class="absolute bg-green-500 h-full w-full rounded-full"
                     ></div>
                 </div>
-                <p class="text-sm font-medium text-neutral-500">
+                <p class="text-xs md:text-sm font-medium text-neutral-500">
                     Available for work
                 </p>
             </div>
         </div>
         <div class="space-y-4">
             <h1
-                class="text-6xl font-semibold leading-tight text-neutral-900/90 dark:text-neutral-100/90"
+                class="text-4xl md:text-6xl font-semibold leading-tight text-neutral-900/90 dark:text-neutral-100/90"
             >
                 I design and build modern experiences
             </h1>
             <p
-                class="text-base text-neutral-900/85 dark:text-neutral-500 max-w-sm mx-auto"
+                class="text-base text-neutral-900/85 dark:text-neutral-500 max-w-xs md:max-w-sm mx-auto"
             >
                 Hey, I'm Isaiah. I design and build modern digital experiences
                 for individuals and growing businesses.
@@ -149,14 +149,17 @@
         </div>
     </div>
 </Sky>
-
-<div class="mt-40 space-y-14">
+<div class="mx-4 mt-40 space-y-14">
     <div class="text-center">
-        <p class="text-sm font-semibold text-neutral-500">Services</p>
-        <h2 class="text-5xl font-semibold leading-tight mt-6 max-w-110 mx-auto">
+        <p class="text-xs md:text-sm font-semibold text-neutral-500">
+            Services
+        </p>
+        <h2
+            class="text-3xl md:text-5xl font-semibold leading-tight mt-6 max-w-2xs md:max-w-110 mx-auto"
+        >
             Here's what I bring to the table for you
         </h2>
-        <p class="text-neutral-500 mt-4 max-w-xs mx-auto">
+        <p class="text-base text-neutral-500 mt-4 max-w-xs mx-auto">
             An overview of the core services I provide, no matter the project
             size or type.
         </p>
@@ -169,7 +172,7 @@
                 <div>{service.icon}</div>
                 <div class="space-y-2">
                     <h3 class="text-2xl font-semibold">{service.title}</h3>
-                    <p class="text-base font-medium text-neutral-500">
+                    <p class="text-base text-neutral-500">
                         {service.description}
                     </p>
                 </div>
@@ -178,13 +181,15 @@
     </div>
 </div>
 
-<div class="mt-40 space-y-14">
+<div class="mx-4 mt-40 space-y-14">
     <div class="text-center">
-        <p class="text-sm font-semibold text-neutral-500">Works</p>
-        <h2 class="text-5xl font-semibold leading-tight mt-6 max-w-110 mx-auto">
+        <p class="text-xs md:text-sm font-semibold text-neutral-500">Works</p>
+        <h2
+            class="text-3xl md:text-5xl font-semibold leading-tight mt-6 max-w-2xs md:max-w-110 mx-auto"
+        >
             Take a closer look at some of my works
         </h2>
-        <p class="text-neutral-500 mt-4 max-w-xs mx-auto">
+        <p class="text-base text-neutral-500 mt-4 max-w-xs mx-auto">
             A selection of projects that showcase my approach, style, and
             attention to detail.
         </p>
@@ -202,7 +207,7 @@
                     />
                 </div>
                 <div class="flex items-end justify-between">
-                    <div class="space-y-2">
+                    <div class="space-y-0 md:space-y-2">
                         <h3 class="text-base font-medium">{work.title}</h3>
                         <p class="text-sm font-semibold text-neutral-500">
                             {work.description}
@@ -217,13 +222,15 @@
     </div>
 </div>
 
-<div class="mt-40 space-y-14">
+<div class="mx-4 mt-40 space-y-14">
     <div class="text-center">
-        <p class="text-sm font-semibold text-neutral-500">FAQ</p>
-        <h2 class="text-5xl font-semibold leading-tight mt-6 max-w-140 mx-auto">
+        <p class="text-xs md:text-sm font-semibold text-neutral-500">FAQ</p>
+        <h2
+            class="text-3xl md:text-5xl font-semibold leading-tight mt-6 max-w-sm md:max-w-140 mx-auto"
+        >
             Some of my frequently asked questions
         </h2>
-        <p class="text-neutral-500 mt-4 max-w-115 mx-auto">
+        <p class="text-base text-neutral-500 mt-4 max-w-xs mx-auto">
             A quick collection of helpful answers so you can get clarity fast.
             If there’s anything else you’re wondering about, just reach out!
         </p>
@@ -238,7 +245,9 @@
                 onclick={() => toggleFAQ(faq.question)}
             >
                 <div class="flex items-center justify-between">
-                    <h3 class="text-lg font-medium">{faq.question}</h3>
+                    <h3 class="text-base md:text-lg font-medium">
+                        {faq.question}
+                    </h3>
                     <div
                         class="px-2 py-1 bg-neutral-200 dark:bg-neutral-900 rounded-full text-neutral-500 dark:text-neutral-100"
                     >
@@ -261,18 +270,22 @@
     </div>
 </div>
 
-<div class="mt-40 space-y-14">
+<div class="mx-4 mt-40 space-y-14">
     <div class="text-center">
-        <p class="text-sm font-semibold text-neutral-500">Get Started</p>
-        <h2 class="text-5xl font-semibold leading-tight mt-6 max-w-140 mx-auto">
+        <p class="text-xs md:text-sm font-semibold text-neutral-500">
+            Get Started
+        </p>
+        <h2
+            class="text-3xl md:text-5xl font-semibold leading-tight mt-6 max-w-sm mx-auto"
+        >
             Shoot me a DM, let's discuss your next project
         </h2>
-        <p class="text-neutral-500 mt-4 max-w-115 mx-auto">
+        <p class="text-neutral-500 mt-4 max-w-xs mx-auto">
             Whether you want to send an email, drop a quick message, or hop on a
             call — I'm here and excited to hear what you're working on.
         </p>
     </div>
-    <div class="grid grid-cols-2 gap-8 max-w-200 mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-200 mx-auto">
         <!-- TODO: make contact form -->
         <a href="mailto:hello@isaiah-hamilton.dev">
             <div
@@ -314,7 +327,7 @@
                 </li>
             </ul>
         </div>
-        <a href="##" class="col-span-2">
+        <a href="##" class="col-span-1 md:col-span-2">
             <div
                 class="group bg-neutral-100 hover:bg-white dark:bg-neutral-950 dark:hover:bg-black border-2 border-neutral-200 dark:border-neutral-900 rounded-2xl space-y-4 py-8 transition duration-300"
             >
