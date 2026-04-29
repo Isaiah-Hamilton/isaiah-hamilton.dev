@@ -5,7 +5,8 @@
     import Sky from "$lib/components/sky.svelte";
     import Github from "$lib/components/ui/icons/github.svelte";
     import { FAQs, Services, Works } from "$lib/consts";
-    import { themeStore } from "$lib/theme";
+    import { fromStore } from "svelte/store";
+    import { themeStore } from "$lib/store/theme";
 
     let innerWidth = $state(0);
     let innerHeight = $state(0);
@@ -18,15 +19,12 @@
         openFAQuestion = openFAQuestion === key ? "" : key;
     }
 
-    let theme = $state(false);
-    themeStore.subscribe((value) => {
-        theme = value;
-    });
+    let theme = fromStore(themeStore);
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
 
-<Sky {theme} {innerWidth} {innerHeight}>
+<Sky theme={theme.current} {innerWidth} {innerHeight}>
     <div
         class="h-full flex flex-col items-center justify-center max-w-sm md:max-w-xl mx-auto text-center"
     >

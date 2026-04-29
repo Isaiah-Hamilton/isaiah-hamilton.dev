@@ -1,10 +1,8 @@
 <script lang="ts">
-    import { themeStore } from "$lib/theme";
+    import { fromStore } from "svelte/store";
+    import { themeStore } from "$lib/store/theme";
 
-    let theme = $state(false);
-    themeStore.subscribe((value: boolean) => {
-        theme = value;
-    });
+    let theme = fromStore(themeStore);
 </script>
 
 <nav
@@ -29,22 +27,8 @@
         <li
             class="transition-colors duration-500 ease-out hover:text-neutral-900 dark:hover:text-neutral-100"
         >
-            <button
-                onclick={() =>
-                    themeStore.update((currentTheme) => {
-                        localStorage.setItem(
-                            "theme",
-                            !currentTheme ? "true" : "false",
-                        );
-                        document.documentElement.classList.toggle(
-                            "dark",
-                            !currentTheme,
-                        );
-                        return !currentTheme;
-                    })}
-                class=""
-            >
-                {#if theme}
+            <button onclick={() => themeStore.toggle()}>
+                {#if theme.current}
                     <i class="ph-bold ph-sun"></i>
                 {:else}
                     <i class="ph-bold ph-moon"></i>
