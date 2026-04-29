@@ -1,4 +1,5 @@
 <script lang="ts" module>
+    import packageJson from "../../../package.json";
     import Github from "./ui/icons/github.svelte";
     import Tangled from "./ui/icons/tangled.svelte";
 
@@ -15,7 +16,7 @@
             >
         </div>
         <div class="flex items-center space-x-4">
-            <div class="text-sm text-neutral-500">v1.4.5</div>
+            <div class="text-sm text-neutral-500">v{packageJson.version}</div>
             <a
                 href="https://github.com/isaiah-hamilton/isaiah-hamilton.dev"
                 target="_blank"
