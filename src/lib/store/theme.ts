@@ -2,14 +2,9 @@ import { browser } from "$app/environment";
 import { writable, type Subscriber, type Unsubscriber } from "svelte/store";
 
 export class ThemeStore {
-  private store = writable(false);
-
-  init() {
-    if (!browser) return;
-    const theme = localStorage.getItem("theme") === "true";
-    document.documentElement.classList.toggle("dark", theme);
-    this.store.set(theme);
-  }
+  private store = writable(
+    browser && document.documentElement.classList.contains("dark"),
+  );
 
   subscribe(run: Subscriber<boolean>): Unsubscriber {
     return this.store.subscribe(run);

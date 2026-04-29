@@ -21,6 +21,10 @@
             type="text/css"
             href="https://esm.sh/@phosphor-icons/web@2.1.2/src/bold/style.css"
         />
+        <script>
+            const theme = localStorage.getItem("theme") === "true";
+            document.documentElement.classList.toggle("dark", theme);
+        </script>
         %sveltekit.head%
     </head>
     <body data-sveltekit-preload-data="hover">
