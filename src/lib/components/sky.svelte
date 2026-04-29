@@ -16,7 +16,7 @@
     let stars = $state<Star[]>([]);
 
     $effect(() => {
-        stars = theme === "dark" ? GenerateStars() : [];
+        stars = theme ? GenerateStars() : [];
     });
 </script>
 
