@@ -1,10 +1,6 @@
 import { SkyPresets } from "./preset";
 import type { RGB, ColorStop, Star } from "./types";
 
-function clamp(value: number, min = 0, max = 1): number {
-  return Math.max(min, Math.min(max, value));
-}
-
 /**
  * Cubic Hermite smoothstep — returns a smoothed 0–1 value.
  */
