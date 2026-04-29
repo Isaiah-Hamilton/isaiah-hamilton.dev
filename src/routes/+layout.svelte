@@ -1,70 +1,23 @@
 <script lang="ts">
     import "./layout.css";
-    import { onMount, setContext } from "svelte";
+    import { themeStore, theme } from "$lib/theme";
     import Footer from "$lib/components/footer.svelte";
+    import Navbar from "$lib/components/navbar.svelte";
+    import { onMount } from "svelte";
 
     let { children } = $props();
 
-    let isDark = $state(false);
-    const themeState = {
-        get value() {
-            return isDark;
-        },
-        set value(next: boolean) {
-            isDark = next;
-        },
-    };
-
-    setContext("theme", themeState);
-
     onMount(() => {
-        if (typeof window === "undefined") return;
-        isDark = localStorage.getItem("isDark") === "true";
-        document.documentElement.classList.toggle("dark", isDark);
+        if (typeof window !== "undefined") return;
+        if (localStorage.getItem("isDark") === "true") {
+            themeStore.update((_: boolean) => true);
+        }
+        document.documentElement.classList.toggle("dark", theme);
     });
-
-    function toggleTheme() {
-        isDark = !isDark;
-        document.documentElement.classList.toggle("dark", isDark);
-        localStorage.setItem("isDark", isDark ? "true" : "false");
-    }
 </script>
 
 <div class="relative">
-    <nav
-        class="fixed top-4 left-1/2 transform -translate-x-1/2 z-20 w-fit mx-auto border border-neutral-300 dark:border-neutral-900 rounded-full px-4 py-2 backdrop-blur-md bg-neutral-100 dark:bg-neutral-950/80"
-    >
-        <ul
-            class="flex items-center justify-center gap-4 text-neutral-500 text-sm"
-        >
-            <li
-                class="transition-colors duration-500 ease-out hover:text-neutral-900 dark:hover:text-neutral-100"
-            >
-                <a href="/">Services</a>
-            </li>
-            <li
-                class="transition-colors duration-500 ease-out hover:text-neutral-900 dark:hover:text-neutral-100"
-            >
-                <a href="/about">Works</a>
-            </li>
-            <li
-                class="transition-colors duration-500 ease-out hover:text-neutral-900 dark:hover:text-neutral-100"
-            >
-                <a href="/contact">Contact me</a>
-            </li>
-            <li
-                class="transition-colors duration-500 ease-out hover:text-neutral-900 dark:hover:text-neutral-100"
-            >
-                <button onclick={() => toggleTheme()} class="">
-                    {#if isDark}
-                        <i class="ph-bold ph-sun"></i>
-                    {:else}
-                        <i class="ph-bold ph-moon"></i>
-                    {/if}
-                </button>
-            </li>
-        </ul>
-    </nav>
+    <Navbar />
     <main class="overflow-x-hidden">
         {@render children()}
     </main>

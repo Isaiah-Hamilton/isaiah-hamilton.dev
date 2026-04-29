@@ -4,11 +4,8 @@
     import Tangled from "$lib/components/ui/icons/tangled.svelte";
     import Sky from "$lib/components/sky.svelte";
     import Github from "$lib/components/ui/icons/github.svelte";
-    import { getContext } from "svelte";
     import { FAQs, Services, Works } from "$lib/consts";
-
-    type Theme = "light" | "dark";
-    const themeState = getContext<{ value: Theme }>("theme");
+    import { theme } from "$lib/theme";
 
     let innerWidth = $state(0);
     let innerHeight = $state(0);
@@ -24,7 +21,7 @@
 
 <svelte:window bind:innerWidth bind:innerHeight />
 
-<Sky theme={themeState.value} {innerWidth} {innerHeight}>
+<Sky {theme} {innerWidth} {innerHeight}>
     <div
         class="h-full flex flex-col items-center justify-center max-w-sm md:max-w-xl mx-auto text-center"
     >
