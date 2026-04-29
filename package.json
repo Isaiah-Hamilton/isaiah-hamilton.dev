@@ -1,8 +1,16 @@
 {
   "name": "isaiah-hamilton.dev",
+  "description": "Isaiah Hamilton's personal site",
+  "homepage": "https://github.com/isaiah-hamilton/isaiah-hamilton.dev",
+  "bugs": {
+    "url": "https://github.com/isaiah-hamilton/isaiah-hamilton.dev/issues"
+  },
+  "license": "MIT",
+  "author": "Isaiah Hamilton <isaiah7hamilton@gmail.com> (https://isaiah-hamilton.dev)",
   "private": false,
   "version": "0.0.1",
   "type": "module",
+  "packageManager": "bun@1.3.13",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
