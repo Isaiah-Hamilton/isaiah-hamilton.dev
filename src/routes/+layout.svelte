@@ -1,6 +1,7 @@
 <script lang="ts">
     import "./layout.css";
     import { onMount, setContext } from "svelte";
+    import Footer from "$lib/components/footer.svelte";
 
     let { children } = $props();
 
@@ -27,8 +28,6 @@
         document.documentElement.classList.toggle("dark", isDark);
         localStorage.setItem("isDark", isDark ? "true" : "false");
     }
-
-    const year = new Date().getFullYear();
 </script>
 
 <div class="relative">
@@ -69,15 +68,5 @@
     <main class="overflow-x-hidden">
         {@render children()}
     </main>
-    <footer
-        class="container mx-auto border-t border-neutral-100 dark:border-neutral-900 mt-10 px-4"
-    >
-        <div class="py-4">
-            <p class="flex items-center text-sm text-neutral-500 space-x-1">
-                <span>{year}</span><i class="ph-bold ph-copyright"></i><span
-                    >Isaiah Hamilton</span
-                >
-            </p>
-        </div>
-    </footer>
+    <Footer />
 </div>
