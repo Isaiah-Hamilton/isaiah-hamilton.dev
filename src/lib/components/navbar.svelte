@@ -1,5 +1,10 @@
 <script lang="ts">
-    import { themeStore, theme } from "$lib/theme";
+    import { themeStore } from "$lib/theme";
+
+    let theme = $state(false);
+    themeStore.subscribe((value: boolean) => {
+        theme = value;
+    });
 </script>
 
 <nav
@@ -31,7 +36,10 @@
                             "theme",
                             !currentTheme ? "true" : "false",
                         );
-                        console.log("theme", !currentTheme);
+                        document.documentElement.classList.toggle(
+                            "dark",
+                            !currentTheme,
+                        );
                         return !currentTheme;
                     })}
                 class=""

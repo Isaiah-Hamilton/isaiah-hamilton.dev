@@ -5,7 +5,7 @@
     import Sky from "$lib/components/sky.svelte";
     import Github from "$lib/components/ui/icons/github.svelte";
     import { FAQs, Services, Works } from "$lib/consts";
-    import { theme } from "$lib/theme";
+    import { themeStore } from "$lib/theme";
 
     let innerWidth = $state(0);
     let innerHeight = $state(0);
@@ -17,6 +17,11 @@
     function toggleFAQ(key: string) {
         openFAQuestion = openFAQuestion === key ? "" : key;
     }
+
+    let theme = $state(false);
+    themeStore.subscribe((value) => {
+        theme = value;
+    });
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
