@@ -20,19 +20,21 @@
             <a
                 href="https://github.com/isaiah-hamilton/isaiah-hamilton.dev"
                 target="_blank"
+                class="group"
             >
                 <Github
                     size={20}
-                    fill="fill-neutral-500 dark:fill-neutral-500"
+                    fill="fill-neutral-500 dark:fill-neutral-500 group-hover:fill-neutral-100"
                 />
             </a>
             <a
                 href="https://tangled.sh/isaiah-hamilton.dev/isaiah-hamilton.dev"
                 target="_blank"
+                class="group"
             >
                 <Tangled
                     size={20}
-                    fill="fill-neutral-500 dark:fill-neutral-500"
+                    fill="fill-neutral-500 dark:fill-neutral-500 group-hover:fill-neutral-100"
                 />
             </a>
         </div>
