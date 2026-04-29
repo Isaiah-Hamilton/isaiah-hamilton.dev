@@ -1,10 +1,12 @@
+export const accentColors = ["red", "blue", "green", "yellow"] as const;
+
 export const FAQs = [
   {
     question: "What kinds of projects do you take on?",
     answer:
       "I mainly create clean, modern, high-converting portfolio websites for designers, photographers, creators, agencies, and personal brands. If your work deserves a polished online presence, I can build it.",
   },
-];
+] as const;
 
 export const Services = [
   {
@@ -43,7 +45,7 @@ export const Services = [
     description:
       "CI/CD pipelines, developer workflows, and anything that saves your team hours.",
   },
-];
+] as const;
 
 export const Works = [
   {
@@ -52,4 +54,4 @@ export const Works = [
     image:
       "https://framerusercontent.com/images/7VybckhbrXvFd1uHTiacrudPcXM.png?width=1000&height=750",
   },
-];
+] as const;

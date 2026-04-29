@@ -4,14 +4,12 @@
     import Tangled from "$lib/components/ui/icons/tangled.svelte";
     import Sky from "$lib/components/sky.svelte";
     import Github from "$lib/components/ui/icons/github.svelte";
-    import { FAQs, Services, Works } from "$lib/consts";
+    import { accentColors, FAQs, Services, Works } from "$lib/consts";
     import { fromStore } from "svelte/store";
     import { themeStore } from "$lib/store/theme";
 
     let innerWidth = $state(0);
     let innerHeight = $state(0);
-
-    const workAccentColors = ["red", "blue", "green", "yellow"] as const;
 
     let openFAQuestion = $state("");
 
@@ -161,7 +159,7 @@
                         </div>
                         <i
                             class="ph-bold ph-arrow-up-right text-xl group-hover:rotate-45 transition duration-300 pr-1"
-                            style:color={`var(--color-${workAccentColors[index % workAccentColors.length]}-500)`}
+                            style:color={`var(--color-${accentColors[index % accentColors.length]}-500)`}
                         ></i>
                     </div>
                 </div>
