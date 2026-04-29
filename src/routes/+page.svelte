@@ -64,7 +64,7 @@
             </p>
         </div>
         <div class="flex items-center gap-2 w-fit mx-auto mt-8 z-10">
-            <a href="">
+            <a href="#works">
                 <div
                     class="transition duration-300 flex items-center h-10 w-30 rounded-full bg-neutral-100 dark:bg-neutral-950 shadow-[0px_0px_0px_0px_var(--color-neutral-200)] hover:shadow-[0px_0px_0px_3px_var(--color-neutral-200)] dark:shadow-[0px_0px_0px_0px_var(--color-neutral-900)] dark:hover:shadow-[0px_0px_0px_3px_var(--color-neutral-900)]"
                 >
@@ -75,7 +75,7 @@
                     </p>
                 </div>
             </a>
-            <a href="">
+            <a href="#contact">
                 <div
                     class="transition duration-300 flex items-center h-10 w-30 rounded-full bg-blue-500 text-neutral-100 shadow-[0px_0px_0px_0px_var(--color-blue-400)] hover:shadow-[0px_0px_0px_3px_var(--color-blue-400)]"
                 >
@@ -87,7 +87,7 @@
 </Sky>
 
 <div class="container mx-auto">
-    <div class="mx-4 lg:mx-0 mt-40 space-y-14">
+    <div id="services" class="mx-4 lg:mx-0 pt-20 mt-20 space-y-14">
         <div class="text-center">
             <p class="text-xs md:text-sm font-semibold text-neutral-500">
                 Services
@@ -125,7 +125,7 @@
         </div>
     </div>
 
-    <div class="mx-4 lg:mx-0 mt-40 space-y-14">
+    <div id="works" class="mx-4 lg:mx-0 pt-20 mt-20 space-y-14">
         <div class="text-center">
             <p class="text-xs md:text-sm font-semibold text-neutral-500">
                 Works
@@ -169,7 +169,7 @@
         </div>
     </div>
 
-    <div class="mx-4 lg:mx-0 mt-40 space-y-14">
+    <div id="faq" class="mx-4 lg:mx-0 pt-20 mt-20 space-y-14">
         <div class="text-center">
             <p class="text-xs md:text-sm font-semibold text-neutral-500">FAQ</p>
             <h2
@@ -217,7 +217,7 @@
         </div>
     </div>
 
-    <div class="mx-4 lg:mx-0 mt-40 space-y-14">
+    <div id="contact" class="mx-4 lg:mx-0 pt-20 mt-20 space-y-14">
         <div class="text-center">
             <p class="text-xs md:text-sm font-semibold text-neutral-500">
                 Get Started
