@@ -9,7 +9,7 @@
 
     onMount(() => {
         if (typeof window !== "undefined") return;
-        if (localStorage.getItem("isDark") === "true") {
+        if (localStorage.getItem("theme") === "true") {
             themeStore.update((_: boolean) => true);
         }
         document.documentElement.classList.toggle("dark", theme);

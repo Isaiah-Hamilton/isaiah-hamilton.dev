@@ -28,7 +28,7 @@
                 onclick={() =>
                     themeStore.update((currentTheme) => {
                         localStorage.setItem(
-                            "isDark",
+                            "theme",
                             !currentTheme ? "true" : "false",
                         );
                         console.log("theme", !currentTheme);
