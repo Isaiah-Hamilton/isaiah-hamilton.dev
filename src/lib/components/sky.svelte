@@ -2,6 +2,7 @@
     import { onMount } from "svelte";
     import { GenerateSkyGradient, GenerateStars, StarsOpacity } from "$lib/sky";
     import type { ColorStop, Star } from "$lib/sky/types";
+    import { sleep } from "$lib";
 
     let { theme, innerWidth, innerHeight, children } = $props();
 
@@ -19,7 +20,8 @@
 
     let stars = $state<Star[]>([]);
 
-    onMount(() => {
+    onMount(async () => {
+        await sleep(1); // wait for the component to mount
         isMounted = true;
     });
 
