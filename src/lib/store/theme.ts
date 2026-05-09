@@ -2,7 +2,7 @@ import { browser } from "$app/environment";
 import { writable, type Subscriber, type Unsubscriber } from "svelte/store";
 
 export class ThemeStore {
-  private store = writable(
+  private store = writable<boolean>(
     browser && document.documentElement.classList.contains("dark"),
   );
 
