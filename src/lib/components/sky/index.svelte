@@ -2,13 +2,17 @@
     import { theme } from "$lib/theme/store.svelte";
     import { gradients } from "./gradients";
     import { GenerateStars, StarsOpacity } from "./stars";
+    import type { Star } from "./types";
 
     let { innerWidth, innerHeight, children } = $props();
 
-    let gradient = $state(
-        theme.get() === "dark" ? gradients.dark : gradients.light,
-    );
-    let stars = $state(theme.get() === "dark" ? GenerateStars() : []);
+    let gradient = $state();
+    let stars: Star[] = $state([]);
+
+    $effect(() => {
+        gradient = theme.get() === "dark" ? gradients.dark : gradients.light;
+        stars = theme.get() === "dark" ? GenerateStars() : [];
+    });
 </script>
 
 <div class="relative h-screen overflow-hidden">
