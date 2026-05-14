@@ -2,11 +2,9 @@
     import Bluesky from "$lib/components/ui/icons/bluesky.svelte";
     import Linkedin from "$lib/components/ui/icons/linkedin.svelte";
     import Tangled from "$lib/components/ui/icons/tangled.svelte";
-    import Sky from "$lib/components/sky.svelte";
+    import Sky from "$lib/components/sky/index.svelte";
     import Github from "$lib/components/ui/icons/github.svelte";
     import { accentColors, FAQs, Services, Works } from "$lib/consts";
-    import { fromStore } from "svelte/store";
-    import { themeStore } from "$lib/store/theme";
 
     let innerWidth = $state(0);
     let innerHeight = $state(0);
@@ -16,13 +14,11 @@
     function toggleFAQ(key: string) {
         openFAQuestion = openFAQuestion === key ? "" : key;
     }
-
-    let theme = fromStore(themeStore);
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
 
-<Sky theme={theme.current} {innerWidth} {innerHeight}>
+<Sky {innerWidth} {innerHeight}>
     <div
         class="h-full flex flex-col items-center justify-center max-w-sm md:max-w-xl mx-auto text-center"
     >

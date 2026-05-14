@@ -1,14 +1,6 @@
 export type RGB = [number, number, number];
 
-export interface SkyGradient {
-  dark: boolean;
-  colors: ColorStop[];
-}
-
-export interface ColorStop {
-  rgb: RGB;
-  position: number;
-}
+export type Gradient = Record<"dark" | "light", string>;
 
 export interface Star {
   position: {

@@ -1,8 +1,5 @@
 <script lang="ts">
-    import { fromStore } from "svelte/store";
-    import { themeStore } from "$lib/store/theme";
-
-    let theme = fromStore(themeStore);
+    import { theme } from "$lib/theme/store.svelte";
 </script>
 
 <nav
@@ -27,8 +24,8 @@
         <li
             class="transition-colors duration-500 ease-out hover:text-neutral-900 dark:hover:text-neutral-100"
         >
-            <button onclick={() => themeStore.toggle()}>
-                {#if theme.current}
+            <button onclick={() => theme.toggle()}>
+                {#if theme.get() === "dark"}
                     <i class="ph-bold ph-sun"></i>
                 {:else}
                     <i class="ph-bold ph-moon"></i>
